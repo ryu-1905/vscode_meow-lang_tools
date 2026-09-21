@@ -5,68 +5,69 @@
 <h1 align="center">Meow Lang Tools for Visual Studio Code</h1>
 
 <p align="center">
-  Extension hỗ trợ toàn diện cho ngôn ngữ lập trình <b>meow-lang</b> (.meow) trên Visual Studio Code.
+  Comprehensive language support for <b>meow-lang</b> (.meow) in Visual Studio Code.
 </p>
 
 ---
 
-## ✨ Tính năng nổi bật (Features)
+## ✨ Features
 
-- 🎨 **Cú pháp màu sắc trực quan (Rich Syntax Highlighting)**:
-  - Phân loại rõ ràng từ khóa (`if`, `switch`, `for`, `function`, `type`...).
-  - Nhận diện hàm built-in (`print`, `add`, `equal`, `range`...), namespace module (`console::`, `string::`, `file::`...).
-  - Phân biệt biến, hằng số (`const PI`), kiểu dữ liệu nguyên thủy và struct tự định nghĩa.
-  - Tối ưu bảng màu dịu mắt, tránh các ký tự màu trắng chói.
-- ⚡ **Code Snippets tiện lợi**:
-  - Gõ tắt nhanh các cấu trúc thông dụng như `print`, `fn`, `type`, `switch`, `for`, `if` chỉ với một phím `Tab`.
-- 📐 **Trải nghiệm soạn thảo thông minh (Smart Editing)**:
-  - Tự động đóng cặp ngoặc tròn `()`, vuông `[]`, nhọn `{}` và chuỗi ký tự nháy đơn `''`.
-  - Tự động thụt dòng (Indentation) chuẩn xác khi xuống dòng.
-  - Hỗ trợ comment một dòng `//` (phím tắt `Ctrl + /`) và nhiều dòng `/* ... */`.
-  - Hỗ trợ comment tài liệu `/** ... */` tự động điền `* ` khi Enter.
-  - Hỗ trợ Code Folding khối lệnh `{ ... }` và vùng `// #region` ... `// #endregion`.
-
----
-
-## 🚀 Danh mục Snippets gõ tắt
-
-| Phím tắt (Prefix) | Bấm phím | Mã sinh ra                                                                     |
-| :---------------- | :------: | :----------------------------------------------------------------------------- |
-| `print`           |  `Tab`   | `print('Hello Meow!');`                                                        |
-| `fn`              |  `Tab`   | Khai báo hàm `function void name() { ... }` _(hỗ trợ menu chọn kiểu trả về)_   |
-| `fnvar`           |  `Tab`   | Khai báo hàm tham số biến thiên `function int sum_all(int... numbers) { ... }` |
-| `type`            |  `Tab`   | Định nghĩa Struct `type Name { ... }`                                          |
-| `interface`       |  `Tab`   | Định nghĩa Structural Interface `interface HasContent { ... }`                 |
-| `if`              |  `Tab`   | Câu lệnh điều kiện `if (condition) { ... }`                                    |
-| `ifelse`          |  `Tab`   | Cấu trúc rẽ nhánh `if (...) { ... } else { ... }`                              |
-| `switch`          |  `Tab`   | Cấu trúc `switch (value) { case 1 { ... } default { ... } }`                   |
-| `for`             |  `Tab`   | Vòng lặp duyệt danh sách `for item in collection { ... }`                      |
-| `forr`            |  `Tab`   | Vòng lặp khoảng số `for i in range(0, 10) { ... }`                             |
-| `var`             |  `Tab`   | Khai báo biến `var name = value;`                                              |
-| `const`           |  `Tab`   | Khai báo hằng số `const NAME = value;`                                         |
-| `import`          |  `Tab`   | `import 'module/path' as alias;`                                               |
+- 🎨 **Rich Syntax Highlighting**:
+  - Clear classification of control & declaration keywords (`if`, `switch`, `for`, `function`, `type`...).
+  - Highlight built-in prefix functions (`print`, `println`, `add`, `equal`, `range`...) and module namespaces (`console::`, `string::`, `file::`...).
+  - Distinction between variables, constants (`const PI`), primitive types, and user-defined structs/interfaces.
+  - Specially tuned eye-friendly color palette avoiding harsh white tokens.
+- ⚡ **Productive Code Snippets**:
+  - Rapidly scaffold common constructs like `print`, `fn`, `type`, `switch`, `for`, `if` with a single `Tab` stroke.
+- 📐 **Smart Editing Experience**:
+  - Auto-closing pairs for parentheses `()`, brackets `[]`, braces `{}` and single-quoted strings `''`.
+  - Automatic indentation and outdent rules when pressing `Enter`.
+  - Single-line comments (`//`, shortcut: `Ctrl + /`) and block comments (`/* ... */`).
+  - Documentation comments (`/** ... */`) with auto-continuation `* ` on Enter.
+  - Code folding for block scopes `{ ... }` as well as `// #region` ... `// #endregion`.
 
 ---
 
-## 📂 Cấu trúc dự án
+## 🚀 Snippets Reference
+
+| Prefix      |  Key  | Expanded Code                                                          |
+| :---------- | :---: | :--------------------------------------------------------------------- |
+| `print`     | `Tab` | `print('Hello Meow!');`                                                |
+| `println`   | `Tab` | `println('Hello Meow!');`                                              |
+| `fn`        | `Tab` | `function void name() { ... }` _(with return type dropdown)_           |
+| `fnvar`     | `Tab` | `function int sum_all(int... numbers) { ... }` _(variadic parameters)_ |
+| `type`      | `Tab` | Struct definition: `type Name { ... }`                                 |
+| `interface` | `Tab` | Structural interface: `interface HasContent { ... }`                   |
+| `if`        | `Tab` | Conditional statement: `if (condition) { ... }`                        |
+| `ifelse`    | `Tab` | Conditional branch: `if (...) { ... } else { ... }`                    |
+| `switch`    | `Tab` | Pattern match: `switch (value) { case 1 { ... } default { ... } }`     |
+| `for`       | `Tab` | Collection loop: `for item in collection { ... }`                      |
+| `forr`      | `Tab` | Range loop: `for i in range(0, 10) { ... }`                            |
+| `var`       | `Tab` | Variable declaration: `var name = value;`                              |
+| `const`     | `Tab` | Constant declaration: `const NAME = value;`                            |
+| `import`    | `Tab` | Module import: `import 'module/path' as alias;`                        |
+
+---
+
+## 📂 Project Structure
 
 ```text
 vscode_meow-lang_tools/
 ├── images/
-│   ├── icon.png                 # Logo PNG chuẩn cho VS Code
-│   └── icon.svg                 # File logo vector gốc
+│   ├── icon.png                 # Standard PNG icon for VS Code
+│   └── icon.svg                 # Vector SVG source icon
 ├── snippets/
-│   └── meow.json                # Định nghĩa toàn bộ code snippets
+│   └── meow.json                # Code snippets definition
 ├── syntaxes/
-│   └── meow.tmLanguage.json     # Bộ quy tắc TextMate Grammar bôi màu cú pháp
-├── language-configuration.json  # Cấu hình thụt dòng, auto-closing ngoặc, comment
-├── package.json                 # Manifest khai báo extension
-├── MEOW_SYNTAX_SPEC.md          # Đặc tả chi tiết cú pháp ngôn ngữ meow-lang
-└── README.md                    # Tài liệu hướng dẫn
+│   └── meow.tmLanguage.json     # TextMate grammar for syntax highlighting
+├── language-configuration.json  # Auto-closing, brackets, and indentation rules
+├── package.json                 # Extension manifest
+├── MEOW_SYNTAX_SPEC.md          # Full language specification
+└── README.md                    # Documentation
 ```
 
 ---
 
-## 📝 Giấy phép (License)
+## 📝 License
 
-Phát triển dành riêng cho cộng đồng lập trình viên `meow-lang`.
+Released under the MIT License for the `meow-lang` developer community.
