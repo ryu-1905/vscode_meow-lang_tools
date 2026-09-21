@@ -1,17 +1,13 @@
 {
   "Print to Console": {
     "prefix": "print",
-    "body": ["console::println(${1:'Hello Meow!'});"],
-    "description": "In thông điệp ra console và xuống dòng"
-    "body": [
-      "print(${1:'Hello Meow!'});"
-    ],
-    "description": "In ra terminal"
+    "body": ["print(${1:'Hello Meow!'});"],
+    "description": "Print message to terminal without newline"
   },
-  "Print without newline": {
-    "prefix": "printraw",
-    "body": ["console::print(${1:'Hello Meow!'});"],
-    "description": "In thông điệp ra console không xuống dòng"
+  "Print with newline": {
+    "prefix": "println",
+    "body": ["println(${1:'Hello Meow!'});"],
+    "description": "Print message to terminal with newline"
   },
   "Function Declaration": {
     "prefix": "fn",
@@ -20,7 +16,7 @@
       "\t${0}",
       "}"
     ],
-    "description": "Khai báo hàm mới"
+    "description": "Declare a new function"
   },
   "Variadic Function Declaration": {
     "prefix": "fnvar",
@@ -29,49 +25,27 @@
       "\t${0}",
       "}"
     ],
-    "description": "Khai báo hàm có tham số biến thiên (variadic)"
+    "description": "Declare a function with variadic parameters"
   },
   "Struct Type Definition": {
     "prefix": "type",
     "body": ["type ${1:Name} {", "\t${2:string} ${3:field}", "}"],
-    "body": [
-      "type ${1:Name} {",
-      "\t${2:string} ${3:field}",
-      "}"
-    ],
-    "description": "Định nghĩa Struct Type"
+    "description": "Define a Struct Type"
   },
   "Interface Definition": {
     "prefix": "interface",
     "body": ["interface ${1:HasContent} {", "\t${2:string} ${3:content}", "}"],
-    "body": [
-      "interface ${1:HasContent} {",
-      "\t${2:string} ${3:content}",
-      "}"
-    ],
-    "description": "Định nghĩa Structural Interface"
+    "description": "Define a Structural Interface"
   },
   "If Statement": {
     "prefix": "if",
     "body": ["if (${1:condition}) {", "\t${0}", "}"],
-    "body": [
-      "if (${1:condition}) {",
-      "\t${0}",
-      "}"
-    ],
-    "description": "Câu lệnh điều kiện if"
+    "description": "If conditional statement"
   },
   "If-Else Statement": {
     "prefix": "ifelse",
     "body": ["if (${1:condition}) {", "\t${2}", "} else {", "\t${0}", "}"],
-    "body": [
-      "if (${1:condition}) {",
-      "\t${2}",
-      "} else {",
-      "\t${0}",
-      "}"
-    ],
-    "description": "Câu lệnh điều kiện if-else"
+    "description": "If-Else conditional statement"
   },
   "Switch Case": {
     "prefix": "switch",
@@ -85,51 +59,31 @@
       "\t}",
       "}"
     ],
-    "description": "Cấu trúc switch-case (phong cách Go)"
+    "description": "Switch-case statement (Go style)"
   },
   "For In Loop": {
     "prefix": "for",
     "body": ["for ${1:item} in ${2:collection} {", "\t${0}", "}"],
-    "body": [
-      "for ${1:item} in ${2:collection} {",
-      "\t${0}",
-      "}"
-    ],
-    "description": "Vòng lặp for-in qua danh sách"
+    "description": "For-in loop over collection"
   },
   "For Range Loop": {
     "prefix": "forr",
     "body": ["for ${1:i} in range(${2:0}, ${3:10}) {", "\t${0}", "}"],
-    "body": [
-      "for ${1:i} in range(${2:0}, ${3:10}) {",
-      "\t${0}",
-      "}"
-    ],
-    "description": "Vòng lặp for-in qua khoảng số range(start, end)"
+    "description": "For-in loop over range(start, end)"
   },
   "Variable Declaration": {
     "prefix": "var",
     "body": ["var ${1:name} = ${2:value};"],
-    "body": [
-      "var ${1:name} = ${2:value};"
-    ],
-    "description": "Khai báo biến var"
+    "description": "Declare a variable"
   },
   "Constant Declaration": {
     "prefix": "const",
     "body": ["const ${1:NAME} = ${2:value};"],
-    "body": [
-      "const ${1:NAME} = ${2:value};"
-    ],
-    "description": "Khai báo hằng số const"
+    "description": "Declare a constant"
   },
   "Import Statement": {
     "prefix": "import",
     "body": ["import '${1:module/path}' as ${2:alias};"],
-    "body": [
-      "import '${1:module/path}' as ${2:alias};"
-    ],
-    "description": "Import module với alias"
+    "description": "Import module with alias"
   }
 }
-

@@ -3,7 +3,11 @@
   "displayName": "Meow Lang",
   "description": "Language support for meow-lang",
   "version": "0.0.1",
-  "publisher": "local-dev",
+  "publisher": "ryu-1905",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryu-1905/vscode_meow-lang_tools.git"
+  },
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.80.0"

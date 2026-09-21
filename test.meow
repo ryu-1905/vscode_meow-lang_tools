@@ -1,7 +1,7 @@
 import 'math/advanced' as my_math;
 import 'core/lexer' as lex;
 
-// Struct mẫu
+// Sample Struct
 type Cat {
     string name,
     int age,
@@ -13,14 +13,14 @@ interface HasContent {
 }
 
 /* 
- * Khai báo biến và hằng số
+ * Variables and constants declaration
  */
 var a = 10;
 const PI = 3.14;
 var arr = int[1, 2, 3];
 var is_active = true;
 
-// Khai báo hàm
+// Function declaration
 function int add_nums(int a, int b) {
     return add(a, b);
 }
@@ -33,20 +33,19 @@ function int sum_all(int... numbers) {
     return total;
 }
 
-// Điều kiện & module console
+// Conditions & console module
 if (greater_than(a, 5)) {
-    console::println('Gia tri lon hon 5');
+    println('Value is greater than 5');
 } else {
-    console::println('Gia tri nho hon hoac bang 5');
+    println('Value is less than or equal to 5');
 }
 
-// Cấu trúc switch-case
+// Switch-case structure
 switch (a) {
     case 1, 2, 3 {
-        console::println('1-3');
+        println('1-3');
     }
     default {
-        console::println('default');
+        println('default');
     }
 }
-
