@@ -1,0 +1,54 @@
+{
+  "name": "meow-lang",
+  "displayName": "Meow Lang",
+  "description": "Language support for meow-lang",
+  "version": "0.0.1",
+  "publisher": "local-dev",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "meow",
+        "aliases": [
+          "Meow",
+          "meow"
+        ],
+        "extensions": [
+          ".meow"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/icon.png",
+          "dark": "./images/icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "meow",
+        "scopeName": "source.meow",
+        "path": "./syntaxes/meow.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "meow",
+        "path": "./snippets/meow.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[meow]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.nonBasicASCII": false,
+        "editor.unicodeHighlight.includeComments": false
+      }
+    }
+  }
+}

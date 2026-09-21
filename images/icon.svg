@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <linearGradient id="catGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5c2e7"/>
+      <stop offset="50%" stop-color="#cba6f7"/>
+      <stop offset="100%" stop-color="#89b4fa"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f38ba8"/>
+      <stop offset="100%" stop-color="#fab387"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Nền bo góc tròn chuẩn phong cách VS Code Icon -->
+  <rect width="256" height="256" rx="52" fill="url(#bgGrad)" stroke="#313244" stroke-width="6"/>
+
+  <!-- Tai trái & trong tai -->
+  <polygon points="56,120 72,50 120,95" fill="url(#catGrad)"/>
+  <polygon points="68,110 80,65 110,95" fill="url(#accentGrad)" opacity="0.8"/>
+
+  <!-- Tai phải & trong tai -->
+  <polygon points="200,120 184,50 136,95" fill="url(#catGrad)"/>
+  <polygon points="188,110 176,65 146,95" fill="url(#accentGrad)" opacity="0.8"/>
+
+  <!-- Đầu mèo -->
+  <ellipse cx="128" cy="145" rx="72" ry="58" fill="url(#catGrad)"/>
+
+  <!-- Mắt trái -->
+  <ellipse cx="102" cy="138" rx="9" ry="12" fill="#11111b"/>
+  <circle cx="99" cy="134" r="3.5" fill="#ffffff"/>
+
+  <!-- Mắt phải -->
+  <ellipse cx="154" cy="138" rx="9" ry="12" fill="#11111b"/>
+  <circle cx="151" cy="134" r="3.5" fill="#ffffff"/>
+
+  <!-- Mũi mèo -->
+  <polygon points="128,154 122,147 134,147" fill="url(#accentGrad)"/>
+
+  <!-- Miệng mèo cute (meow) -->
+  <path d="M 122,157 Q 128,162 128,157 Q 128,162 134,157" fill="none" stroke="#11111b" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Râu mèo bên trái -->
+  <line x1="90" y1="150" x2="52" y2="145" stroke="#cba6f7" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="90" y1="158" x2="55" y2="162" stroke="#cba6f7" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Râu mèo bên phải -->
+  <line x1="166" y1="150" x2="204" y2="145" stroke="#cba6f7" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="166" y1="158" x2="201" y2="162" stroke="#cba6f7" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Dấu code tag </ > mini góc dưới -->
+  <g transform="translate(86, 208)">
+    <text x="42" y="18" font-family="'Courier New', Courier, monospace" font-size="20" font-weight="900" fill="#a6adc8" text-anchor="middle" letter-spacing="2">MEOW</text>
+  </g>
+</svg>
+

@@ -1,0 +1,218 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Meow",
+  "scopeName": "source.meow",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#constants" },
+    { "include": "#function-declarations" },
+    { "include": "#type-declarations" },
+    { "include": "#variable-declarations" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#modules" },
+    { "include": "#functions" },
+    { "include": "#variables" },
+    { "include": "#operators" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.meow",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.meow",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.meow",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.meow",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.meow",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "constant.numeric.float.meow",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.meow",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "function-declarations": {
+      "patterns": [
+        {
+          "match": "\\b(function)\\s+(?:([A-Za-z_][A-Za-z0-9_]*)\\s+)?([A-Za-z_][A-Za-z0-9_]*)(?=\\s*\\()",
+          "captures": {
+            "1": { "name": "keyword.control.meow" },
+            "2": { "name": "support.type.primitive.meow" },
+            "3": { "name": "entity.name.function.meow" }
+          }
+        }
+      ]
+    },
+    "type-declarations": {
+      "patterns": [
+        {
+          "match": "\\b(type|interface)\\s+([A-Z][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.control.meow" },
+            "2": { "name": "entity.name.type.class.meow" }
+          }
+        }
+      ]
+    },
+    "variable-declarations": {
+      "patterns": [
+        {
+          "match": "\\b(const)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.control.meow" },
+            "2": { "name": "variable.other.constant.meow" }
+          }
+        },
+        {
+          "match": "\\b(var)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.control.meow" },
+            "2": { "name": "variable.parameter.meow" }
+          }
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.meow",
+          "match": "\\b(if|else|switch|case|default|for|in|break|continue|return|function|type|interface|import|as|var|const)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "support.type.primitive.meow",
+          "match": "\\b(int|decimal|string|boolean|any|void)\\b"
+        },
+        {
+          "name": "entity.name.type.meow",
+          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "modules": {
+      "patterns": [
+        {
+          "match": "\\b(console|array|string|file|sys)(::)([a-zA-Z_][a-zA-Z0-9_]*)?",
+          "captures": {
+            "1": { "name": "support.class.meow" },
+            "2": { "name": "keyword.control.meow" },
+            "3": { "name": "support.function.meow" }
+          }
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.meow",
+          "match": "\\b(add|subtract|multiply|divide|modulo|equal|not_equal|greater_than|greater_equal|greater_than_or_equal|less_than|less_equal|less_than_or_equal|and|or|not|is_null|range|print|println)\\b(?=\\s*\\()"
+        },
+        {
+          "name": "entity.name.function.meow",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\()"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.constant.meow",
+          "match": "\\b[A-Z][A-Z0-9_]*\\b"
+        },
+        {
+          "match": "\\b(import)\\s+.*\\b(as)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.control.meow" },
+            "2": { "name": "keyword.control.meow" },
+            "3": { "name": "variable.parameter.meow" }
+          }
+        },
+        {
+          "match": "\\b(for)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+(in)\\b",
+          "captures": {
+            "1": { "name": "keyword.control.meow" },
+            "2": { "name": "variable.parameter.meow" },
+            "3": { "name": "keyword.control.meow" }
+          }
+        },
+        {
+          "match": "(\\.)([a-zA-Z_][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.control.meow" },
+            "2": { "name": "variable.other.property.meow" }
+          }
+        },
+        {
+          "name": "variable.parameter.meow",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.control.meow",
+          "match": "::"
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": "="
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": "\\.\\.\\."
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": "\\."
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "keyword.control.meow",
+          "match": ","
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": ";"
+        }
+      ]
+    }
+  }
+}
